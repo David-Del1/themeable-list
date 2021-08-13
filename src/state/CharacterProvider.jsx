@@ -9,7 +9,7 @@ function CharacterProvider({ children }) {
   const [selectedApi, setSelectedApi] = useState('airBender');
 
   const apiMap = {
-    airbender: fetchAirBenderCharacters,
+    airBender: fetchAirBenderCharacters,
   };
 
   useEffect(() => {
@@ -27,6 +27,16 @@ function CharacterProvider({ children }) {
 export const useCharacters = () => {
   const { characters } = useContext(CharacterContext);
   return characters;
+};
+
+export const useSetSelectedApi = () => {
+  const { setSelectedApi } = useContext(CharacterContext);
+  return setSelectedApi;
+};
+
+export const useAvailableAPIs = () => {
+  const { apiMap } = useContext(CharacterContext);
+  return Object.keys(apiMap);
 };
 
 
