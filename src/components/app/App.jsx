@@ -1,5 +1,14 @@
 import React from 'react';
+import CharacterList from '../characters/CharacterList';
+import CharacterToggle from '../characters/CharacterToggle';
+import Header from '../header/Header';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Header />
+      <CharacterToggle />
+      <CharacterList />
+    </>
+  );
 }
