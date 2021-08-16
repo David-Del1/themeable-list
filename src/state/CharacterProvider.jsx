@@ -1,5 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { fetchAirBenderCharacters } from '../services/airBenderApi';
+import { fetchFuturamaCharacters } from '../services/futuramaApi';
+import { fetchHeyArnoldCharacters } from '../services/heyArnoldApi';
+import { fetchRickAndMortyCharacters } from '../services/rickAndMortyApi';
 
 
 const CharacterContext = createContext();
@@ -10,6 +13,9 @@ function CharacterProvider({ children }) {
 
   const apiMap = {
     airBender: fetchAirBenderCharacters,
+    futurama: fetchFuturamaCharacters,
+    heyArnold: fetchHeyArnoldCharacters,
+    rickAndMorty: fetchRickAndMortyCharacters
   };
 
   useEffect(() => {
